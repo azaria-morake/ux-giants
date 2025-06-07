@@ -11,7 +11,10 @@ const Nav = styled.nav`
   padding: ${({ theme }) => theme.spacing.lg};
   position: relative;
   z-index: 100;
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
 `;
+
 
 const Logo = styled(Link)`
   font-family: ${({ theme }) => theme.fonts.heading};

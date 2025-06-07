@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.colors.gray};
   font-size: 0.9rem;
   color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Copyright = styled.p`

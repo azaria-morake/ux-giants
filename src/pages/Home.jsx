@@ -8,6 +8,7 @@ import { FiCpu, FiUsers, FiRefreshCw, FiCode } from 'react-icons/fi';
 const Container = styled.div`
   position: relative;
   overflow-x: hidden;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 const HeroSection = styled.section`

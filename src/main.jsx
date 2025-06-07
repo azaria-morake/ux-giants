@@ -6,6 +6,18 @@ import App from './App';
 import { theme } from './styles/theme';
 import { GlobalStyle } from './styles/GlobalStyle';
 
+// Suppress React Router future flag warnings
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (
+    typeof args[0] === 'string' && 
+    args[0].includes('React Router Future Flag Warning')
+  ) {
+    return;
+  }
+  originalWarn.apply(console, args);
+};
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
