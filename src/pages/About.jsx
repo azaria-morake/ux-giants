@@ -1,0 +1,200 @@
+import styled from 'styled-components';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import AxeMark from '../components/AxeMark';
+
+const Container = styled.div`
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: ${({ theme }) => theme.spacing.xl};
+`;
+
+const Section = styled.section`
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+`;
+
+const SectionTitle = styled.h2`
+  color: ${({ theme }) => theme.colors.accent};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+const Timeline = styled.div`
+  position: relative;
+  padding-left: ${({ theme }) => theme.spacing.lg};
+  margin-left: ${({ theme }) => theme.spacing.md};
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: ${({ theme }) => theme.colors.gray};
+  }
+`;
+
+const TimelineItem = styled(motion.div)`
+  position: relative;
+  padding-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -${({ theme }) => theme.spacing.lg};
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.colors.accent};
+    transform: translateX(-5px);
+  }
+`;
+
+const TimelineDate = styled.span`
+  display: block;
+  color: ${({ theme }) => theme.colors.gray};
+  font-size: 0.9rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+`;
+
+const PromiseGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: ${({ theme }) => theme.spacing.lg};
+  margin-top: ${({ theme }) => theme.spacing.lg};
+`;
+
+const PromiseCard = styled(motion.div)`
+  background: rgba(217, 65, 65, 0.05);
+  border: 1px solid ${({ theme }) => theme.colors.gray};
+  padding: ${({ theme }) => theme.spacing.lg};
+  border-radius: 4px;
+`;
+
+const About = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  const promises = [
+    {
+      title: "Code as Design",
+      description: "We treat every line of code as a design decision, ensuring technical and aesthetic harmony."
+    },
+    {
+      title: "Purposeful Pixels",
+      description: "No decorative elements. Every visual component serves a functional purpose."
+    },
+    {
+      title: "Engineered Experience",
+      description: "User flows are architected like software systems - with logic, structure, and scalability."
+    }
+  ];
+
+  return (
+    <Container>
+      <AxeMark size={300} position="top-left" />
+      
+      <Section>
+        <SectionTitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          The Mythology
+        </SectionTitle>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          UX Giants was born from the realization that true user experience isn't crafted in design tools - it's forged in code. 
+          The name reflects our towering ambition to elevate UX through engineering excellence.
+        </motion.p>
+      </Section>
+
+      <Section ref={ref}>
+        <SectionTitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          The Transformation
+        </SectionTitle>
+        <Timeline>
+          <TimelineItem
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <TimelineDate>2015-2017</TimelineDate>
+            <h3>Traditional UX Agency</h3>
+            <p>Began as a conventional UX design studio, delivering wireframes and prototypes.</p>
+          </TimelineItem>
+          <TimelineItem
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <TimelineDate>2018-2019</TimelineDate>
+            <h3>The Awakening</h3>
+            <p>Recognized the limitations of design-first approaches without engineering integration.</p>
+          </TimelineItem>
+          <TimelineItem
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <TimelineDate>2020-Present</TimelineDate>
+            <h3>UX as Software</h3>
+            <p>Transitioned to a code-first philosophy where UX is implemented, not just imagined.</p>
+          </TimelineItem>
+        </Timeline>
+      </Section>
+
+      <Section>
+        <SectionTitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          Our Promise
+        </SectionTitle>
+        <PromiseGrid>
+          {promises.map((promise, index) => (
+            <PromiseCard
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <h3>{promise.title}</h3>
+              <p>{promise.description}</p>
+            </PromiseCard>
+          ))}
+        </PromiseGrid>
+      </Section>
+    </Container>
+  );
+};
+
+export default About;

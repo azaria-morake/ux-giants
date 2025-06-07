@@ -40,4 +40,34 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     font-family: inherit;
   }
+
+    /* Responsive base font size */
+  html {
+    font-size: 100%;
+    
+    @media (max-width: 1024px) {
+      font-size: 95%;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 90%;
+    }
+  }
+  
+  /* Prevent overflow */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus {
+    outline: 2px solid ${({ theme }) => theme.colors.accent};
+    outline-offset: 2px;
+  }
 `;
+
