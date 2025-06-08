@@ -78,6 +78,7 @@ const MenuButton = styled.button`
 
   @media (max-width: 768px) {
     display: block;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 

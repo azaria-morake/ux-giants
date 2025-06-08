@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import styled from 'styled-components';
 
 // Add a styled loader
 const LoaderContainer = styled.div`

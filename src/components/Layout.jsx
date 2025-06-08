@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Outlet } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -15,11 +16,13 @@ const MainContent = styled.main`
   padding: ${({ theme }) => theme.spacing.lg};
 `;
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <Container>
       <Navbar />
-      <MainContent>{children}</MainContent>
+      <MainContent>
+        <Outlet />
+      </MainContent>
       <Footer />
     </Container>
   );

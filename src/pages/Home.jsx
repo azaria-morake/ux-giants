@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import styled from 'styled-components';
 import { motion, useInView } from 'framer-motion';
 import AxeMark from '../components/AxeMark';
+import { Link } from 'react-router-dom';
 import PhilosophyCard from '../components/PhilosophyCard';
 import { FiCpu, FiUsers, FiRefreshCw, FiCode } from 'react-icons/fi';
 
@@ -33,7 +34,8 @@ const Subheading = styled(motion.p)`
   font-weight: 300;
 `;
 
-const CTAButton = styled(motion.button)`
+
+const CTAButton = styled(motion(Link))`
   background: ${({ theme }) => theme.colors.accent};
   color: ${({ theme }) => theme.colors.primary};
   padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
@@ -42,7 +44,16 @@ const CTAButton = styled(motion.button)`
   letter-spacing: 0.1em;
   border: none;
   align-self: flex-start;
+  text-decoration: none;
+  cursor: pointer;
+
+  
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary}; // Ensure it stays visible
+    background: ${({ theme }) => theme.colors.accent}; // Optional: Or slightly change for hover effect
+  }
 `;
+
 
 const Section = styled.section`
   padding: ${({ theme }) => `${theme.spacing.xl} ${theme.spacing.lg}`};
@@ -104,6 +115,7 @@ const Home = () => {
           Where UX meets code. Where precision meets power.
         </Subheading>
         <CTAButton
+          to='/contact'
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}

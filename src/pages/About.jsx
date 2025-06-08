@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import AxeMark from '../components/AxeMark';
+import { FiCode, FiLayers, FiCpu } from 'react-icons/fi';
+import { FaRobot } from 'react-icons/fa';
+import PromiseCard from '../components/PromiseCard';
+
 
 const Container = styled.div`
   position: relative;
@@ -83,12 +87,7 @@ const PromiseGrid = styled.div`
   margin-top: ${({ theme }) => theme.spacing.lg};
 `;
 
-const PromiseCard = styled(motion.div)`
-  background: rgba(217, 65, 65, 0.05);
-  border: 1px solid ${({ theme }) => theme.colors.gray};
-  padding: ${({ theme }) => theme.spacing.lg};
-  border-radius: 4px;
-`;
+
 
 const About = () => {
   const ref = useRef();
@@ -96,14 +95,17 @@ const About = () => {
 
   const promises = [
     {
+      icon: <FiCode size={24} />,
       title: "Code as Design",
       description: "We treat every line of code as a design decision, ensuring technical and aesthetic harmony."
     },
     {
+      icon: <FiLayers size={24} />,
       title: "Purposeful Pixels",
       description: "No decorative elements. Every visual component serves a functional purpose."
     },
     {
+      icon: <FaRobot size={20} />,
       title: "Engineered Experience",
       description: "User flows are architected like software systems - with logic, structure, and scalability."
     }
@@ -180,17 +182,14 @@ const About = () => {
         </SectionTitle>
         <PromiseGrid>
           {promises.map((promise, index) => (
-            <PromiseCard
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <h3>{promise.title}</h3>
-              <p>{promise.description}</p>
-            </PromiseCard>
-          ))}
+      <PromiseCard
+        key={index}
+        icon={promise.icon}
+        title={promise.title}
+        description={promise.description}
+        transition={{ delay: index * 0.1 }}
+      />
+    ))}
         </PromiseGrid>
       </Section>
     </Container>
