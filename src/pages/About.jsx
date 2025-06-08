@@ -189,7 +189,7 @@ const About = () => {
         description={promise.description}
         transition={{ delay: index * 0.1 }}
       />
-    ))}
+    ))}   
         </PromiseGrid>
       </Section>
     </Container>

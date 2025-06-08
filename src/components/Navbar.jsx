@@ -17,12 +17,21 @@ const Nav = styled.nav`
 
 
 const Logo = styled(Link)`
-  font-family: ${({ theme }) => theme.fonts.heading};
-  font-size: 1.5rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  // font-family: ${({ theme }) => theme.fonts.heading};
+  // font-size: 1.5rem;
+  // letter-spacing: 0.1em;
+  // text-transform: uppercase;
+
+  display: block;
+  width: 160px;
+  height: 100px;
+  background: url('/uxgiants-logo-D94141.png') no-repeat center center;
+  background-size: contain;
+
+
   position: relative;
   z-index: 10;
+
 `;
 
 const NavLinks = styled.div`
@@ -94,7 +103,7 @@ const Navbar = () => {
   return (
     <Nav>
       <Logo to="/" onClick={closeMenu}>
-        <GiantStamp size={40} />
+        {/* <GiantStamp size={40} /> */}
       </Logo>
       
       <MenuButton onClick={toggleMenu} aria-label="Toggle menu">

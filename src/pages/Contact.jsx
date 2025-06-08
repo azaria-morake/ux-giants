@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FiMail, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
 import AxeMark from '../components/AxeMark';
 
 const Container = styled.div`
@@ -14,239 +14,122 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const TerminalWindow = styled(motion.div)`
-  background: rgba(11, 11, 11, 0.8);
-  border: 1px solid ${({ theme }) => theme.colors.gray};
-  border-radius: 4px;
-  padding: ${({ theme }) => theme.spacing.lg};
-  font-family: 'Courier New', monospace;
-  position: relative;
-  overflow: hidden;
-`;
-
-const TerminalHeader = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-  padding-bottom: ${({ theme }) => theme.spacing.sm};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
-`;
-
-const TerminalButton = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
-  background: ${({ color }) => color};
-`;
-
-const TerminalTitle = styled.div`
-  margin-left: ${({ theme }) => theme.spacing.md};
-  color: ${({ theme }) => theme.colors.gray};
-  font-size: 0.9rem;
-`;
-
-const TerminalBody = styled.div`
-  line-height: 1.6;
-`;
-
-const TerminalLine = styled.div`
-  display: flex;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
-`;
-
-const Prompt = styled.span`
+const Title = styled(motion.h1)`
   color: ${({ theme }) => theme.colors.accent};
-  margin-right: ${({ theme }) => theme.spacing.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  text-align: center;
 `;
 
-const BlinkingCursor = styled.span`
-  display: inline-block;
-  width: 8px;
-  height: 16px;
-  background: ${({ theme }) => theme.colors.accent};
-  vertical-align: middle;
-  margin-left: 4px;
-  animation: blink 1s step-end infinite;
+const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: ${({ theme }) => theme.spacing.lg};
+`;
 
-  @keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
+const ContactCard = styled(motion.div)`
+  background: rgba(11, 11, 11, 0.7);
+  border: 1px solid ${({ theme }) => theme.colors.gray};
+  padding: ${({ theme }) => theme.spacing.lg};
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.accent};
+    transform: translateY(-5px);
   }
 `;
 
-const InputField = styled.input`
-  background: transparent;
-  border: none;
-  color: ${({ theme }) => theme.colors.text};
-  font-family: inherit;
-  font-size: inherit;
-  width: 100%;
-  outline: none;
-  flex-grow: 1;
+const ContactIcon = styled.div`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(217, 65, 65, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
+  color: ${({ theme }) => theme.colors.accent};
+  font-size: 1.5rem;
 `;
 
-const SubmitButton = styled(motion.button)`
-  background: ${({ theme }) => theme.colors.accent};
-  color: ${({ theme }) => theme.colors.primary};
-  border: none;
-  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`};
-  font-family: ${({ theme }) => theme.fonts.heading};
+const ContactLabel = styled.h3`
+  font-size: 1rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: ${({ theme }) => theme.spacing.lg};
-  align-self: flex-end;
+`;
+
+const ContactInfo = styled.p`
+  color: ${({ theme }) => theme.colors.gray};
+  font-size: 0.9rem;
+  line-height: 1.6;
 `;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    project: '',
-    email: ''
-  });
-  const [activeField, setActiveField] = useState('name');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
+  const contactMethods = [
+    {
+      icon: <FiMail />,
+      label: "Email",
+      info: "uxgiants@gmail.com",
+      href: "mailto:uxgiants@gmail.com"
+    },
+    {
+      icon: <FiPhone />,
+      label: "Phone",
+      info: "+27 66 085-7813",
+      href: "tel:+27660857813"
+    },
+    {
+      icon: <FiMapPin />,
+      label: "HQ Location",
+      info: "19 Ameshoff Street, Braamfontein, JHB",
+      href: "https://www.google.com/maps/place/19+Ameshoff+St,+Braamfontein,+Johannesburg,+2001/@-26.1909428,28.0372315,3a,75y,21.28h,90t/data=!3m7!1e1!3m5!1slBPshnlz8XTAQ7N0wCanXA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DlBPshnlz8XTAQ7N0wCanXA%26yaw%3D21.28!7i13312!8i6656!4m7!3m6!1s0x1e950c19945f0cd9:0x55afd081af485e1!8m2!3d-26.1906678!4d28.0373743!10e5!16s%2Fg%2F11v0zz4j3r?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+      icon: <FiClock />,
+      label: "Hours",
+      info: "Mon-Fri: 9AM-5PM SAST",
+      href: null
     }
-  }, [activeField]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      if (activeField === 'name') {
-        setActiveField('project');
-      } else if (activeField === 'project') {
-        setActiveField('email');
-      }
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
-  };
+  ];
 
   return (
     <Container>
       <AxeMark size={300} position="center" />
       
-      <TerminalWindow
+      <Title
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <TerminalHeader>
-          <TerminalButton color="#FF5F56" />
-          <TerminalButton color="#FFBD2E" />
-          <TerminalButton color="#27C93F" />
-          <TerminalTitle>contact-form --cli</TerminalTitle>
-        </TerminalHeader>
+        Get In Touch
+      </Title>
 
-        <TerminalBody>
-          {isSubmitted ? (
-            <>
-              <TerminalLine>
-                <Prompt>$</Prompt> Transmission successful!
-              </TerminalLine>
-              <TerminalLine>
-                <Prompt>$</Prompt> We'll be in touch soon.
-              </TerminalLine>
-            </>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <TerminalLine>
-                <Prompt>$</Prompt> Who are you?
-                {activeField === 'name' ? (
-                  <>
-                    <InputField
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onKeyDown={handleKeyDown}
-                      ref={inputRef}
-                      autoComplete="off"
-                    />
-                    <BlinkingCursor />
-                  </>
-                ) : (
-                  ` ${formData.name || '[not provided]'}`
-                )}
-              </TerminalLine>
-
-              {formData.name && (
-                <TerminalLine>
-                  <Prompt>$</Prompt> What are you building?
-                  {activeField === 'project' ? (
-                    <>
-                      <InputField
-                        type="text"
-                        name="project"
-                        value={formData.project}
-                        onChange={handleChange}
-                        onKeyDown={handleKeyDown}
-                        ref={activeField === 'project' ? inputRef : null}
-                        autoComplete="off"
-                      />
-                      <BlinkingCursor />
-                    </>
-                  ) : (
-                    ` ${formData.project || '[not provided]'}`
-                  )}
-                </TerminalLine>
-              )}
-
-              {formData.project && (
-                <TerminalLine>
-                  <Prompt>$</Prompt> Where can we reach you?
-                  {activeField === 'email' ? (
-                    <>
-                      <InputField
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        ref={activeField === 'email' ? inputRef : null}
-                        autoComplete="off"
-                      />
-                      <BlinkingCursor />
-                    </>
-                  ) : (
-                    ` ${formData.email || '[not provided]'}`
-                  )}
-                </TerminalLine>
-              )}
-
-              {formData.email && (
-                <SubmitButton
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Transmission'}
-                </SubmitButton>
-              )}
-            </form>
-          )}
-        </TerminalBody>
-      </TerminalWindow>
+      <ContactGrid>
+        {contactMethods.map((method, index) => (
+          <ContactCard
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ y: -5 }}
+            as={method.href ? 'a' : 'div'}
+            href={method.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ContactIcon>
+              {method.icon}
+            </ContactIcon>
+            <ContactLabel>{method.label}</ContactLabel>
+            <ContactInfo>{method.info}</ContactInfo>
+          </ContactCard>
+        ))}
+      </ContactGrid>
     </Container>
   );
 };
