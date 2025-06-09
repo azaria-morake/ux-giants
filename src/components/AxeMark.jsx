@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import logo from '../assets/uxgiants-logo-D94141.png';
 
 const AxeDiv = styled.div`
   position: absolute;
   opacity: 0.07;
   z-index: 0;
   pointer-events: none;
-  background: url('/uxgiants-logo-D94141.png') no-repeat center center;
+  background: url(${logo}) no-repeat center center;
   background-size: contain;
 `;
 

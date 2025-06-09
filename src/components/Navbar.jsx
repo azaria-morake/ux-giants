@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import GiantStamp from './GiantStamp';
+import logo from '../assets/uxgiants-logo-D94141.png';
 
 const Nav = styled.nav`
   display: flex;
@@ -25,7 +26,7 @@ const Logo = styled(Link)`
   display: block;
   width: 160px;
   height: 100px;
-  background: url('/uxgiants-logo-D94141.png') no-repeat center center;
+  background: url(${logo}) no-repeat center center;
   background-size: contain;
 
 
