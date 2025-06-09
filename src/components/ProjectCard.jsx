@@ -72,7 +72,7 @@ const ProjectCard = ({ project }) => {
     >
       <ImageContainer>
         <ProjectImage 
-          src={project.image} 
+          src={`./${project.image}`} 
           alt={project.title}
           loading="lazy"
         />
