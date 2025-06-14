@@ -7,11 +7,19 @@ const Container = styled.div`
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xl};
-  min-height: 70vh;
+  padding: ${({ theme }) => `${theme.spacing.lg} ${theme.spacing.md}`};
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.sm}`};
+    min-height: auto;
+    margin-top: 20px;
+  }
 `;
 
 const Title = styled(motion.h1)`
@@ -22,8 +30,11 @@ const Title = styled(motion.h1)`
 
 const ContactGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); // More flexible cards
   gap: ${({ theme }) => theme.spacing.lg};
+    ${({ theme }) => theme.mobile} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ContactCard = styled(motion.div)`

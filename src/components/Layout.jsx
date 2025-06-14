@@ -14,6 +14,7 @@ const Container = styled.div`
 const MainContent = styled.main`
   flex: 1;
   padding: ${({ theme }) => theme.spacing.lg};
+  
 `;
 
 const Layout = () => {

@@ -9,11 +9,17 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.lg};
+  padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.lg}`}; // Reduced vertical padding
   position: relative;
   z-index: 100;
   background-color: ${({ theme }) => theme.colors.primary};
+
  // border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+
+   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+
+    padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
+
 `;
 
 

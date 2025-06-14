@@ -10,15 +10,25 @@ const Container = styled.div`
   position: relative;
   overflow-x: hidden;
   background-color: ${({ theme }) => theme.colors.primary};
+    width: 100vw;
+  max-width: 100vw;
 `;
 
 const HeroSection = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.lg};
   position: relative;
+
+    margin-top: 0; // Remove any default margin
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    min-height: auto;
+    padding-top: ${({ theme }) => theme.spacing.xl};
+    padding-bottom: ${({ theme }) => theme.spacing.xl};
+  }
 `;
 
 const Tagline = styled(motion.h1)`
@@ -56,8 +66,7 @@ const CTAButton = styled(motion(Link))`
 
 
 const Section = styled.section`
-  padding: ${({ theme }) => `${theme.spacing.xl} ${theme.spacing.lg}`};
-  max-width: 1200px;
+  padding: ${({ theme }) => `${theme.spacing.lg} ${theme.spacing.md}`}; // Reduced padding  max-width: 1200px;
   margin: 0 auto;
 `;
 

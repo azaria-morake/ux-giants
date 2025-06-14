@@ -8,7 +8,8 @@ const Container = styled.div`
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => `${theme.spacing.lg} ${theme.spacing.md}`}; // Reduced padding
+  min-height: calc(100vh - 80px); // Account for navbar height
 `;
 
 const Header = styled.header`
@@ -42,9 +43,15 @@ const FilterButton = styled(motion.button)`
 
 const ProjectsGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: ${({ theme }) => theme.spacing.lg};
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // More flexible min-width
+  gap: ${({ theme }) => theme.spacing.md}; // Reduced gap
   margin-top: ${({ theme }) => theme.spacing.lg};
+  overflow: visible; // Ensure no hidden overflow
+   
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr; // Single column on mobile
+    padding: 0 ${({ theme }) => theme.spacing.sm}; // Add side padding
+  }
 `;
 
 const Projects = () => {

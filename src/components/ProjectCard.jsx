@@ -8,7 +8,10 @@ const Card = styled(motion.div)`
   height: 100%;
   display: flex;
   flex-direction: column;
-
+  
+  width: 100%; // Ensure full width of grid cell
+  max-width: 100%; // Prevent overflow
+  
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
     

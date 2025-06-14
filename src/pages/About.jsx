@@ -11,7 +11,13 @@ const Container = styled.div`
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => `${theme.spacing.lg} ${theme.spacing.md}`};
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.sm}`};
+  }
 `;
 
 const Section = styled.section`

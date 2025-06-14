@@ -69,5 +69,29 @@ export const GlobalStyle = createGlobalStyle`
     outline: 2px solid ${({ theme }) => theme.colors.accent};
     outline-offset: 2px;
   }
+
+  /* Prevent horizontal overflow and improve mobile rendering */
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+  /* Mobile-specific viewport correction */
+  @media (max-width: 480px) {
+    body {
+      padding: 0 !important;
+      margin: 0 !important;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    * {
+      max-width: 100% !important;
+    }
+  }
+    * {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
 `;
 
