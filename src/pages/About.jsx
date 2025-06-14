@@ -147,16 +147,16 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
-            <TimelineDate>2015-2017</TimelineDate>
+            <TimelineDate>2022-2023</TimelineDate>
             <h3>Traditional UX Agency</h3>
-            <p>Began as a conventional UX design studio, delivering wireframes and prototypes.</p>
+            <p>Began as a conventional UX design studio concept, aiming at delivering wireframes and prototypes.</p>
           </TimelineItem>
           <TimelineItem
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <TimelineDate>2018-2019</TimelineDate>
+            <TimelineDate>2023</TimelineDate>
             <h3>The Awakening</h3>
             <p>Recognized the limitations of design-first approaches without engineering integration.</p>
           </TimelineItem>
@@ -165,7 +165,7 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <TimelineDate>2020-Present</TimelineDate>
+            <TimelineDate>2024-Present</TimelineDate>
             <h3>UX as Software</h3>
             <p>Transitioned to a code-first philosophy where UX is implemented, not just imagined.</p>
           </TimelineItem>

@@ -13,7 +13,7 @@ const Nav = styled.nav`
   position: relative;
   z-index: 100;
   background-color: ${({ theme }) => theme.colors.primary};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
+ // border-bottom: 1px solid ${({ theme }) => theme.colors.gray};
 `;
 
 

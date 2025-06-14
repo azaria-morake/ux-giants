@@ -65,7 +65,7 @@ const Projects = () => {
             techStack: ["React", "Node.js", "MongoDB"],
             category: "finance",
             url: "https://finbridge.io",
-            image: "/placeholder-finance.jpg"
+            image: "/finbridge-logo.jpg"
           },
           {
             id: 2,
@@ -74,16 +74,16 @@ const Projects = () => {
             techStack: ["Python", "TensorFlow", "React Native"],
             category: "health",
             url: "https://healthtrackpro.com",
-            image: "/placeholder-health.jpg"
+            image: "/health-track-logo.jpg"
           },
           {
             id: 3,
-            title: "EduVerse",
-            description: "Virtual classroom platform with real-time collaboration",
-            techStack: ["WebRTC", "React", "Firebase"],
+            title: "NSFP",
+            description: "National Soccer Facilities Project to help underserved communities soccer teams compete at national level.",
+            techStack: ["Django", "React", "Postgres"],
             category: "education",
             url: "https://eduvrse.app",
-            image: "/placeholder-education.jpg"
+            image: "/nsfp.jpg"
           },
           {
             id: 4,
@@ -92,7 +92,7 @@ const Projects = () => {
             techStack: ["Three.js", "Next.js", "GraphQL"],
             category: "ecommerce",
             url: "https://shopflow.tech",
-            image: "/placeholder-ecommerce.jpg"
+            image: "/shopflow-logo.jpg"
           }
         ];
         
