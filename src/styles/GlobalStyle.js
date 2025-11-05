@@ -8,6 +8,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
   
   body {
     font-family: ${({ theme }) => theme.fonts.body};
@@ -15,8 +22,52 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
   }
   
+  #root {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+    /* Fix scrolling on all devices */
+    * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.accent}; /* Red dot color */
+    border-radius: 10px; /* Circular thumb */
+    border: 1px solid ${({ theme }) => theme.colors.primary}; /* Slight border for definition */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff6b6b; /* Slightly brighter red on hover */
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: ${({ theme }) => theme.colors.accent} transparent;
+  }
+
+    /* Ensure smooth scrolling */
+    html {
+    scroll-behavior: smooth;
+  }
+
   h1, h2, h3, h4 {
     font-family: ${({ theme }) => theme.fonts.heading};
     text-transform: uppercase;
@@ -88,9 +139,10 @@ export const GlobalStyle = createGlobalStyle`
     * {
       max-width: 100% !important;
     }
-  }
-    * {
-      -webkit-overflow-scrolling: touch;
+
+            /* Hide custom scrollbar on mobile for better native experience */
+            ::-webkit-scrollbar {
+      width: 3px;
     }
   }
 `;
