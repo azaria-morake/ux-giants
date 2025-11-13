@@ -19,6 +19,7 @@ const Container = styled.div`
     padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.sm}`};
     min-height: auto;
     margin-top: 20px;
+    
   }
 `;
 
@@ -34,6 +35,10 @@ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); // More flexible ca
   gap: ${({ theme }) => theme.spacing.lg};
     ${({ theme }) => theme.mobile} {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 480px ) {
+    margin: 20px;
   }
 `;
 
@@ -91,8 +96,8 @@ const Contact = () => {
     {
       icon: <FiPhone />,
       label: "Phone",
-      info: "+27 66 085-7813",
-      href: "tel:+27660857813"
+      info: "+27 68 730-9881",
+      href: "tel:+27687309881"
     },
     {
       icon: <FiMapPin />,

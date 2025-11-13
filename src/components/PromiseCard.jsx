@@ -13,6 +13,10 @@ const Card = styled(motion.div)`
   align-items: flex-start;
   text-align: left;
 
+  @media (max-width: 480px) {
+  margin: 20px;
+  }
+
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
     background: rgba(11, 11, 11, 0.9);

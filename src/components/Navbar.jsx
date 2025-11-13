@@ -19,6 +19,7 @@ const Nav = styled.nav`
    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
 
     padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing.md}`};
+   }
 
 `;
 
@@ -38,6 +39,11 @@ const Logo = styled(Link)`
 
   position: relative;
   z-index: 10;
+
+  @media (max-width: 480px) {
+
+    margin-left: -60px;
+  }
 
 `;
 

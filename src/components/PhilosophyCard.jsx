@@ -11,8 +11,14 @@ const Card = styled(motion.div)`
   text-align: center;
   transition: all 0.3s ease;
   
+  @media (max-width: 480px) {
+
+    margin: 20px;
+  }
+  
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
+
   }
 `;
 

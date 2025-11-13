@@ -72,7 +72,7 @@ const Projects = () => {
             techStack: ["React", "Node.js", "MongoDB"],
             category: "finance",
             url: "https://finbridge.io",
-            image: "/finbridge-logo.jpg"
+            image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
           },
           {
             id: 2,
@@ -81,7 +81,7 @@ const Projects = () => {
             techStack: ["Python", "TensorFlow", "React Native"],
             category: "health",
             url: "https://healthtrackpro.com",
-            image: "/health-track-logo.jpg"
+            image: "health-track-logo.jpg"
           },
           {
             id: 3,

@@ -39,7 +39,8 @@ const Tagline = styled(motion.h1)`
 
 const Subheading = styled(motion.p)`
   font-size: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
+//  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: 10px;
   max-width: 600px;
   font-weight: 300;
 `;
@@ -114,15 +115,31 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Cutting Through Complexity.
+          The Face Of Product Engineering.
         </Tagline>
         <Subheading
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Where UX meets code. Where precision meets power.
-        </Subheading>
+          Where user experience means code.
+          
+          </Subheading>
+          <Subheading
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+           Where product means raw engineering power.
+           </Subheading>
+           <Subheading
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+           We don’t build interfaces.  
+            We forge them.
+            </Subheading>
         <CTAButton
           to='/contact'
           whileHover={{ scale: 1.05 }}
@@ -131,7 +148,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Let's Build
+          Forge With Us
         </CTAButton>
       </HeroSection>
 
@@ -147,9 +164,20 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          style={{ fontWeight: 'bold', marginTop: '1rem' }}
+          style={{ fontWeight: '', marginTop: '1rem' }}
         >
           We design like engineers. We build like visionaries.
+          UX Giants doesn’t separate design from engineering.
+To us, code is design — every function, pixel, and transition is a crafted experience.
+We are not here to follow UX conventions; we define new ones through software craftsmanship.
+
+Our aesthetic is industrial elegance — minimal, powerful, and direct.
+Our tone is assertive, philosophical, and grounded in technical truth.
+
+Every line of code should feel like a sculpted surface.
+Every animation should feel like momentum.
+Every decision should echo this belief:
+User experience isn’t what you see — it’s what you feel.
         </motion.p>
       </Section>
 
