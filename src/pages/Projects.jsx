@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import AxeMark from '../components/AxeMark';
+import HealthTrackLogo from '/health-track-logo.jpg';
+import NSFPLogo from '/nsfp.jpg';
+import ShopFlowLogo from '/shopflow-logo.jpg';
 
 const Container = styled.div`
   position: relative;
@@ -72,7 +75,7 @@ const Projects = () => {
             techStack: ["React", "Node.js", "MongoDB"],
             category: "finance",
             url: "https://finbridge.io",
-            image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+            image: HealthTrackLogo,
           },
           {
             id: 2,
@@ -90,7 +93,7 @@ const Projects = () => {
             techStack: ["Django", "React", "Postgres"],
             category: "education",
             url: "https://eduvrse.app",
-            image: "/nsfp.jpg"
+            image: NSFPLogo,
           },
           {
             id: 4,
@@ -99,7 +102,7 @@ const Projects = () => {
             techStack: ["Three.js", "Next.js", "GraphQL"],
             category: "ecommerce",
             url: "https://shopflow.tech",
-            image: "/shopflow-logo.jpg"
+            image: ShopFlowLogo,
           }
         ];
         
