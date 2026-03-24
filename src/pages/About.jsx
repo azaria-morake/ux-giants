@@ -134,8 +134,6 @@ const About = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-UX Giants is a collective of engineers, designers, and thinkers redefining what it means to build digital experiences.  
-We treat code as our medium and engineering as our art form.
 
 Every function is a motion.  
 Every interface is a system of thought.

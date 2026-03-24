@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import AxeMark from '../components/AxeMark';
-import HealthTrackLogo from '/health-track-logo.jpg';
-import NSFPLogo from '/nsfp.jpg';
-import ShopFlowLogo from '/shopflow-logo.jpg';
+import { FiDollarSign, FiShoppingCart, FiCpu } from 'react-icons/fi';
+import { MdHealthAndSafety } from 'react-icons/md';
+import { TbSoccerField } from "react-icons/tb";
+import { RiShoppingBag4Fill } from "react-icons/ri";
+import { PiBridgeFill } from "react-icons/pi";
+
+
 
 const Container = styled.div`
   position: relative;
@@ -75,7 +79,8 @@ const Projects = () => {
             techStack: ["React", "Node.js", "MongoDB"],
             category: "finance",
             url: "https://finbridge.io",
-            image: HealthTrackLogo,
+            //image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                  icon: <PiBridgeFill size={100} color="#F44336" />
           },
           {
             id: 2,
@@ -84,7 +89,8 @@ const Projects = () => {
             techStack: ["Python", "TensorFlow", "React Native"],
             category: "health",
             url: "https://healthtrackpro.com",
-            image: "health-track-logo.jpg"
+            //image: "health-track-logo.jpg",
+            icon: <MdHealthAndSafety size={100} color="#F44336" />
           },
           {
             id: 3,
@@ -93,7 +99,8 @@ const Projects = () => {
             techStack: ["Django", "React", "Postgres"],
             category: "education",
             url: "https://eduvrse.app",
-            image: NSFPLogo,
+            //image: "nsfp.jpg"
+            icon: <TbSoccerField size={100} color="#F44336" />
           },
           {
             id: 4,
@@ -102,7 +109,8 @@ const Projects = () => {
             techStack: ["Three.js", "Next.js", "GraphQL"],
             category: "ecommerce",
             url: "https://shopflow.tech",
-            image: ShopFlowLogo,
+            //image: "shopflow-logo.jpg"
+            icon: <RiShoppingBag4Fill size={100} color="#F44336" />
           }
         ];
         

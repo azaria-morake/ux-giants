@@ -97,7 +97,7 @@ const Contact = () => {
       icon: <FiPhone />,
       label: "Phone",
       info: "+27 68 730-9881",
-      href: "tel:+27687309881"
+      href: "tel:+276687309881"
     },
     {
       icon: <FiMapPin />,

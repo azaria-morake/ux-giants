@@ -158,7 +158,7 @@ const Home = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          Who We Are
+          What is UX/User Experience?
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -166,19 +166,24 @@ const Home = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{ fontWeight: '', marginTop: '1rem' }}
         >
-          We design like engineers. We build like visionaries.
-          UX Giants doesn’t separate design from engineering.
-To us, code is design — every function, pixel, and transition is a crafted experience.
-We are not here to follow UX conventions; we define new ones through software craftsmanship.
 
-Our aesthetic is industrial elegance — minimal, powerful, and direct.
-Our tone is assertive, philosophical, and grounded in technical truth.
-
-Every line of code should feel like a sculpted surface.
-Every animation should feel like momentum.
-Every decision should echo this belief:
+User experience (UX) is the way people feel when they use a product — how easy it is to navigate, how quickly they understand what to do, and how smoothly everything responds. Good UX removes confusion. Great UX makes technology feel natural.
+   
 User experience isn’t what you see — it’s what you feel.
-        </motion.p>
+<br />  <br /> 
+
+If you want people to feel a certain way when they use your website or app, we’ll work with you to create that emotion — and then write the exact code needed to bring it to life. We don’t just create websites. We create the experience your users should have.
+
+<br />  <br /> 
+
+If your goal is to help people buy your services without friction or confusion, we design the journey step-by-step so every action feels natural. No pain points. No guesswork. Just clarity.
+
+<br />  <br /> 
+
+And if you want your website to stand out — to be memorable, shareable, and unmistakably yours — we give it the personality and presence it needs. That is what true User Experience is: shaping how people feel, not just what they see.
+
+<br /> <br />
+We design for South Africa’s diverse users, creating products that feel natural, effortless, and loved.        </motion.p>
       </Section>
 
       <Section>

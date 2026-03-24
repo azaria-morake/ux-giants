@@ -8,29 +8,35 @@ const Card = styled(motion.div)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  
-  width: 100%; // Ensure full width of grid cell
-  max-width: 100%; // Prevent overflow
+  width: 100%;
+  max-width: 100%;
   
   &:hover {
     border-color: ${({ theme }) => theme.colors.accent};
-    
     img {
       transform: scale(1.05);
     }
   }
 `;
 
-const ImageContainer = styled.div`
+const IconContainer = styled.div`
   height: 200px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
-const ProjectImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+const IconWrapper = styled.div`
+  font-size: 4rem; /* Increased size for better visibility */
+  display: flex;
+  
+  border-radius: 50%;
+  background: rgba(217, 65, 65, 0.1);
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.colors.accent};
 `;
 
 const Content = styled.div`
@@ -73,13 +79,9 @@ const ProjectCard = ({ project }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <ImageContainer>
-        <ProjectImage 
-          src={`./${project.image}`} 
-          alt={project.title}
-          loading="lazy"
-        />
-      </ImageContainer>
+      <IconContainer>
+        <IconWrapper>{project.icon}</IconWrapper>
+      </IconContainer>
       <Content>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
