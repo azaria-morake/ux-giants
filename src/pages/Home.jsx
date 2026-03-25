@@ -91,7 +91,7 @@ const Home = () => {
     {
       icon: <FiUsers size={32} />,
       title: "Human-Centered Algorithms",
-      description: "Our code understands people, not just processes."
+      description: "Software that Thinks Like Your Customers. Our code understands people, not just processes."
     },
     {
       icon: <FiRefreshCw size={32} />,
@@ -158,7 +158,7 @@ const Home = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          What is UX/User Experience?
+          UX is Code
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -167,20 +167,14 @@ const Home = () => {
           style={{ fontWeight: '', marginTop: '1rem' }}
         >
 
-User experience (UX) is the way people feel when they use a product — how easy it is to navigate, how quickly they understand what to do, and how smoothly everything responds. Good UX removes confusion. Great UX makes technology feel natural.
-   
-User experience isn’t what you see — it’s what you feel.
+We build the software that builds your business. By focusing on precision engineering, 
+<br /> we ensure your customers have a seamless experience every time they engage with you. 
+<br /> No lag. No confusion. Just a direct connection to your brand.
 <br />  <br /> 
 
-If you want people to feel a certain way when they use your website or app, we’ll work with you to create that emotion — and then write the exact code needed to bring it to life. We don’t just create websites. We create the experience your users should have.
-
-<br />  <br /> 
-
-If your goal is to help people buy your services without friction or confusion, we design the journey step-by-step so every action feels natural. No pain points. No guesswork. Just clarity.
-
-<br />  <br /> 
-
-And if you want your website to stand out — to be memorable, shareable, and unmistakably yours — we give it the personality and presence it needs. That is what true User Experience is: shaping how people feel, not just what they see.
+If you want people to feel a certain way when they use your website or app,
+<br />  we’ll work with you to create that emotion — and then write the exact code needed to bring it to life.
+<br />  We don’t just create websites. We create the experience your users should have.
 
 <br /> <br />
 We design for South Africa’s diverse users, creating products that feel natural, effortless, and loved.        </motion.p>
